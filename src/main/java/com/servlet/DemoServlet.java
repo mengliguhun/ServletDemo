@@ -1,9 +1,7 @@
 package com.servlet;
 
-import com.servlet.db.JDBCUtils;
 import com.servlet.db.bean.UserBean;
-import org.apache.commons.dbutils.QueryRunner;
-import org.apache.commons.dbutils.handlers.BeanHandler;
+import com.servlet.db.dao.UserDaoImpl;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -24,10 +22,8 @@ public class DemoServlet extends HttpServlet {
         } else if (pass == null || pass.isEmpty()){
             result = "密码为空";
         } else {
-            String sql = "select * from users where username='"+account+"'";
-            QueryRunner queryRunner = new QueryRunner(JDBCUtils.getDataSource());
             try {
-                UserBean user = queryRunner.query(sql, new BeanHandler<UserBean>(UserBean.class));
+                UserBean user = UserDaoImpl.getInstance().getUserByName(account);
                 if (user == null){
                     result = "不存在此用户";
                 } else {
