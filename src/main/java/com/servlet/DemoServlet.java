@@ -1,6 +1,7 @@
 package com.servlet;
 
 import com.servlet.db.bean.UserBean;
+import com.servlet.db.dao.IDao;
 import com.servlet.db.dao.UserDaoImpl;
 
 import javax.servlet.ServletException;
@@ -10,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class DemoServlet extends HttpServlet {
     @Override
