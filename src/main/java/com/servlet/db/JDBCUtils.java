@@ -18,7 +18,7 @@ public class JDBCUtils {
 //    static {
 //        try {
 //            pooledDataSource.setDriverClass("com.mysql.jdbc.Driver");
-//            pooledDataSource.setJdbcUrl("jdbc:mysql://localhost:3306/test");
+//            pooledDataSource.setJdbcUrl("jdbc:mysql://localhost:3306/test?serverTimezone=Asia/Shanghai");
 //            pooledDataSource.setUser("root");
 //            pooledDataSource.setPassword("yin123456");
 //            pooledDataSource.setInitialPoolSize(3);
